@@ -1,8 +1,12 @@
-class Producto: 
-    def __init__(self, nombre, descripcion, precio):
+class Producto:
+
+    # 1. Constructor de la clase Producto
+    def __init__(self, nombre: str, descripcion: str, precio: float, disponible: bool):
         self.nombre = nombre
         self.descripcion = descripcion
-        self.precio = precio  
+        self.precio = precio
+        self.disponible = disponible
 
-    def __str__(self):
-        return f"Producto: {self.nombre}, descripcion: {self.descripcion}, precio: {self.precio}"
+    # 2. Mostrar información del producto
+    def __str__(self) -> str:
+        return f"Producto: {self.nombre}, Descripción: {self.descripcion}, Precio: {self.precio}, Disponible: {self.disponible}"

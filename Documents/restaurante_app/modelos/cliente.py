@@ -1,9 +1,12 @@
 class Cliente:
-    def __init__(self, nombre, mesa, telefono):
+
+    # 1. Constructor de la clase Cliente
+
+    def __init__(self, nombre: str, mesa: int, telefono: str):
         self.nombre = nombre
         self.mesa = mesa
         self.telefono = telefono
-
-    def __str__(self):
-        return f"Cliente: {self.nombre}, mesa: {self.mesa}, telefono: {self.telefono}"
     
+    # 2. Mostrar información del cliente
+    def __str__(self)-> str:
+        return f"Cliente: {self.nombre}, Mesa: {self.mesa}, Teléfono: {self.telefono}"

@@ -1,41 +1,47 @@
-#Importacion de clases
-from modelos.cliente import Cliente
+    # 1. Importaciones
+
 from modelos.producto import Producto
+from modelos.cliente import Cliente 
 from servicios.restaurante import Restaurante
 
-#Crear clientes
+def main():
+    # 2. Objeto principal del sistema
+    mi_restaurante = Restaurante()
 
-mi_cliente1 = Cliente("Israel", 1, "055-1234567")
-mi_cliente2 = Cliente("Natalia", 2, "044-9876543")
-mi_cliente3 = Cliente("Clara", 3, "066-7654321")
-mi_cliente4 = Cliente("Faz", 4, "077-3456789")
-mi_cliente5 = Cliente("Fransheskha", 5, "088-5678901")
+    # 3. Creación de productos
+    producto1 = Producto("Fideos Wonton", "Fideos chinos rellenos de carne y verduras", 8.99, True)
+    producto2 = Producto("Mousse de Chocolate", "Postre de chocolate con crema batida", 6.99, True)
+    producto3 = Producto("Salmón a la Plancha", "Filete de salmón fresco con salsa de limón", 14.99, True)
+    producto4 = Producto("Ensalada César", "Lechuga, pollo a la parrilla y crutones", 10.99, True)
+    producto5 = Producto("Cheesecake", "Delicioso cheesecake con frutos rojos", 7.99, True)
 
-#Crear productos
+    # 4. Creación de clientes
+    cliente1 = Cliente("Israel", 1, "055-1234567")
+    cliente2 = Cliente("Natalia", 2, "044-9876543")
+    cliente3 = Cliente("Clara", 3, "066-7654321")
+    cliente4 = Cliente("Faz", 4, "077-3456789")
+    cliente5 = Cliente("Fransheskha", 5, "088-5678901")
 
-mi_producto1 = Producto("fideos wonton", "Fideos chinos rellenos de carne y verduras, servidos en caldo", 8.99)
-mi_producto2 = Producto("Mousse de Chocolate", "Postre de chocolate con crema batida", 6.99)
-mi_producto3 = Producto("Salmón a la Plancha", "Filete de salmón fresco a la plancha con salsa de limón", 14.99)
-mi_producto4 = Producto("Ensalada César", "Ensalada fresca con lechuga, pollo a la parrilla, crutones y aderezo César", 10.99)
-mi_producto5 = Producto("Cheesecake de Frutos Rojos", "Delicioso cheesecake con una mezcla de frutos rojos frescos", 7.99)
+    # 5. Agregando productos y clientes al restaurante
+    mi_restaurante.agregar_producto(producto1)
+    mi_restaurante.agregar_producto(producto2)
+    mi_restaurante.agregar_producto(producto3)
+    mi_restaurante.agregar_producto(producto4)
+    mi_restaurante.agregar_producto(producto5)
 
-#Agregar clientes y productos al restaurante
-#clientes
-mi_restaurante = Restaurante()
-mi_restaurante.agregar_cliente(mi_cliente1)
-mi_restaurante.agregar_cliente(mi_cliente2)
-mi_restaurante.agregar_cliente(mi_cliente3)
-mi_restaurante.agregar_cliente(mi_cliente4)
-mi_restaurante.agregar_cliente(mi_cliente5)
-#productos
-mi_restaurante.agregar_producto(mi_producto1)
-mi_restaurante.agregar_producto(mi_producto2)
-mi_restaurante.agregar_producto(mi_producto3)
-mi_restaurante.agregar_producto(mi_producto4)
-mi_restaurante.agregar_producto(mi_producto5)
+    mi_restaurante.agregar_cliente(cliente1)
+    mi_restaurante.agregar_cliente(cliente2)
+    mi_restaurante.agregar_cliente(cliente3)
+    mi_restaurante.agregar_cliente(cliente4)
+    mi_restaurante.agregar_cliente(cliente5)
 
-#Mostrar clientes y productos
-print("Clientes:")
-mi_restaurante.mostrar_clientes()
-print("\nProductos:")
-mi_restaurante.mostrar_producto()
+    # 6. Visualización
+
+    print("=== SISTEMA DE ADMINISTRACIÓN DE RESTAURANTE ===\n")
+    mi_restaurante.mostrar_productos()
+    print("\n") 
+    mi_restaurante.mostrar_clientes()
+
+# 7. Ejecutar el sistema
+if __name__ == "__main__":
+    main()
